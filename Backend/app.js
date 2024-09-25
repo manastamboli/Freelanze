@@ -6,7 +6,7 @@ const cookie = require('cookie-parser')
 // const bodyParser = require('body-parser')
 // app.use(bodyParser)
 app.use(cors({
-    origin: 'http://localhost:5173', // Your frontend origin
+    origin: 'https://freelanze-frontend-74k8.onrender.com', // Your frontend origin
     credentials: true // Allow credentials (cookies)
 }));
 
