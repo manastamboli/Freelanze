@@ -42,7 +42,7 @@ function RegisterPage({ handleTabChange }) {
       console.log("proffession",profession)
 
       // Send the form data to your backend for authentication or registration
-      const response = await axios.post("http://localhost:3000/api/addUser", {
+      const response = await axios.post("https://freelanze-backend.onrender.com/addUser", {
         userName: username,
         userEmail: email,
         userPassword: password,

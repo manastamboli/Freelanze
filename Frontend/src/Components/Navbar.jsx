@@ -15,7 +15,7 @@ function Navbar() {
     async function getUser() {
       console.log("here its is comming from")
         console.log(Cookies.get('accessToken'))
-        const response= await axios.get('http://localhost:3000/api/getUser').catch((err)=>{ return {error:err}})
+        const response= await axios.get('https://freelanze-backend.onrender.com/getUser').catch((err)=>{ return {error:err}})
         setUserName(response.data.user.userName)
     }
      getUser();

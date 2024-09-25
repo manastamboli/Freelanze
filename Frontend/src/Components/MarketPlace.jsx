@@ -7,7 +7,7 @@ const Marketplace = () => {
   useEffect(() => {
     // Fetch project data from the backend API using axios
     axios
-      .get("http://localhost:3000/api/getjobs")
+      .get("https://freelanze-backend.onrender.com/getjobs")
       .then((response) => {
         // Update state with the fetched data
         setProjects(response.data);
