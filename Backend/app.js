@@ -5,12 +5,12 @@ const cors = require('cors')
 const cookie = require('cookie-parser')
 // const bodyParser = require('body-parser')
 // app.use(bodyParser)
-// app.use(cors({
-//     origin: 'https://freelanze-frontend-74k8.onrender.com', // Your frontend origin
-//     credentials: true // Allow credentials (cookies)
-// }));
-// app.use(cors());
-// app.options('*', cors()); // Enable preflight across all routes
+app.use(cors({
+    origin: 'https://freelanze-frontend-74k8.onrender.com', // Your frontend origin
+    credentials: true // Allow credentials (cookies)
+}));
+app.use(cors());
+app.options('*', cors()); // Enable preflight across all routes
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://freelanze-frontend-74k8.onrender.com");

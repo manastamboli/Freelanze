@@ -7,7 +7,9 @@ const Marketplace = () => {
   useEffect(() => {
     // Fetch project data from the backend API using axios
     axios
-      .get("https://freelanze-backend.onrender.com/getjobs")
+      .get("https://freelanze-backend.onrender.com/getjobs",{
+        withCredentials: true // This ensures cookies are sent in cross-origin requests
+      })
       .then((response) => {
         // Update state with the fetched data
         setProjects(response.data);
