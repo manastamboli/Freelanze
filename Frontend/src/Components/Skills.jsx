@@ -28,7 +28,7 @@ function Skills() {
 
  async function handleNextRoute() {
     console.log(userSkills); // you will get the array of skills when user will click on Next button
-   await axios.post('https://freelanze-backend.onrender.com/getSkills',userSkills)
+   await axios.post('https://freelanze-backend.onrender.com/api/getSkills',userSkills)
     navigator("/jobexperience");
   }
 

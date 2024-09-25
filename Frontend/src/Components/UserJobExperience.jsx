@@ -48,7 +48,7 @@ function UserJobExperience() {
     try {
       console.log(Cookies.get('accessToken'));
       
-        const response = await axios.post('https://freelanze-backend.onrender.com/getExperience', {roles}, {
+        const response = await axios.post('https://freelanze-backend.onrender.com/api/getExperience', {roles}, {
          
             headers: {
                 'Content-Type': 'application/json'

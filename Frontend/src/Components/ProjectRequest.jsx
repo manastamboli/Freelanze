@@ -74,7 +74,7 @@ function ProjectRequest() {
     }
     
     try {
-      const data = await axios.post('https://freelanze-backend.onrender.com/addjob', formData, {
+      const data = await axios.post('https://freelanze-backend.onrender.com/api/addjob', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

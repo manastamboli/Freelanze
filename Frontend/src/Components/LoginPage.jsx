@@ -33,7 +33,7 @@ async function handleSubmit(event) {
   };
 
   try {
-    const response = await axios.post('https://freelanze-backend.onrender.com/loginUser', data);
+    const response = await axios.post('https://freelanze-backend.onrender.com/api/loginUser', data);
     console.log(response);
    
     if (response.data.loginData.data.success) {
