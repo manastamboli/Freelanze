@@ -138,7 +138,7 @@ async function addUserSkillController(req,res) {
     
     const access=req.cookies.accessToken
      const skills=req.body
-     console.log(access)
+     console.log("token from skills page",access)
     const accessToken= await userModel.addUserSkills(access).catch((err)=>{
         return({error:err})
     });
