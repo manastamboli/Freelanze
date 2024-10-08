@@ -135,7 +135,9 @@ async function loginUserController(req, res) {
 }
 async function addUserSkillController(req,res) {
     console.log(req.cookies.accesstoken);
-    
+    const midUser = req.user;
+    console.log("it is current user",midUser)
+
     const access=req.cookies.accessToken
      const skills=req.body
      console.log("token from skills page",access)
