@@ -171,6 +171,7 @@ async function addUserSkillController(req,res) {
 async function addUserExperienceController(req, res) {
     try {
         const access=req.cookies.accessToken
+        console.log("all cookies",req.cookies)
         console.log(access,"bro")
         if (!access) {
             return res.status(401).json({ success: false, message: "Access token missing", status: 401 });
