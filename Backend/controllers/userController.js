@@ -30,7 +30,7 @@ async function addUserController(req, res) {
     const options = {
         httpOnly: true,
         secure: true,
-        sameSite:'lax',
+        sameSite:'none',
         
     }
      
@@ -120,8 +120,8 @@ async function loginUserController(req, res) {
 
     const options = {
         httpOnly: true,
-        secure: true,
-        sameSite:'lax',
+        secure:true,
+        sameSite:'none',
         
     }
      

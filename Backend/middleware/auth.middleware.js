@@ -4,7 +4,7 @@ const User = require('../schema/userSchema');
 const cookies = require('js-cookie')
 const multer=require('multer')
 async function authenticateToken(req, res, next) {
-    const token = req.cookies.accesstoken; 
+    const token = req.cookies.accessToken; 
     console.log(token,"bro");
     
     if (token == null) return res.sendStatus(401);
