@@ -91,13 +91,14 @@ function Navbar() {
             </a>
             
             {guestUser ? (
-              <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
-               log in
-              </a>
-            ) : (
               <a href="#" className="block lg:inline hover:underline">
-                 {userName}
-              </a>
+               {` Hello ${userName}`}
+            </a>
+            ) : (
+              
+              <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
+             Login
+             </a>
             )}
           </div>
           <button onClick={handleProjectRoute} className="bg-blue-500 hover:bg-blue-700 py-2 px-9 rounded-full text-white mt-6 lg:mt-0">

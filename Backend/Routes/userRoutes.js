@@ -15,6 +15,7 @@ router.post('/api/getSkills',userController.addUserSkillController)
 router.post('/api/getExperience',userController.addUserExperienceController)
 router.get('/api/getUser',authenticateToken,userController.getCurrentUser)
 router.get('/api/midCheck',authenticateToken,userController.middlewareCheck)
+router.post('/api/send-mail',userController.emailSendController)
 
 //Job Routes
 

@@ -3,6 +3,7 @@ const token= require('../services/genToken')
 const User= require('../schema/userSchema')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs');
+const sendMail= require('../services/sendMail')
 // const cookies= require('js-cookie');
 
 require('dotenv').config();
@@ -14,7 +15,7 @@ async function addUserController(req, res) {
 
     })
     const resultToken= await token.generateToken(data.data.addUser)
-    console.log(resultToken)
+    console.log(resultToken,"it is access token from signup")
 
     console.log(testData)
     console.log("data:",data)
@@ -239,6 +240,19 @@ const getCurrentUser = (req, res) => {
     
     
  }
+
+async function emailSendController(req,res) {
+    const{sender,reciever,subject,message}=req.body;
+   try {
+     await sendMail(sender,reciever,subject,message)
+    
+     res.status(200).json("email sent successfully")
+   } catch (error) {
+    res.status(400).json({message:'error occured in mail controller',error})
+   }
+
+    
+}
  
 module.exports={
     addUserController,
@@ -246,5 +260,6 @@ module.exports={
     addUserSkillController,
     addUserExperienceController,
     getCurrentUser,
-    middlewareCheck
+    middlewareCheck,
+    emailSendController
 }

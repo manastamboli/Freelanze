@@ -1,16 +1,22 @@
 const Job = require('../schema/jobSchema')
 const jobModel = require('../models/jobModels');
+const {uploadFileOnCloudinary} = require('../services/cloudinary')
 
 
 async function addJobController(req,res) {
-    const file=req.file;
+    const file=req.file.path;
     console.log("it is file",file)
     console.log("it is body",req.body)
+
+    if(!file){
+      console.log("file not found ")
+    }
+    const thumnail = await uploadFileOnCloudinary(file)
     const jobDetails ={
       title:req.body.title,
       description:req.body.description,
       skillsRequired: Array.isArray(req.body.skillsRequired) ? req.body.skillsRequired : [req.body.skillsRequired],
-      thumnail:file ? file.filename : null,
+      thumnail:thumnail.url,
       amount:req.body.amount
     }
     
