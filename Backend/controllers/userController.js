@@ -134,18 +134,12 @@ async function loginUserController(req, res) {
 
 }
 async function addUserSkillController(req,res) {
-    console.log(req.cookies.accesstoken);
-    const midUser = req.user;
     
+    const accessUser = req.user;
+    console.log("requested from middleware",accessUser)
+    const access= req.cookies['accessToken'];
 
-    const myCookie = req.cookies['accesstoken'];
-    const myCookie2 = req.cookies['accessToken'];
     
-    console.log("its a cookie",myCookie2)
-    console.log("its a cookie",myCookie)
-    console.log("it is current user",midUser)
-
-    const access=req.cookies.accessToken
      const skills=req.body
      console.log("token from skills page",access)
     const accessToken= await userModel.addUserSkills(access).catch((err)=>{
@@ -160,7 +154,7 @@ async function addUserSkillController(req,res) {
         return ({error:error})
     }
 
-  console.log(accessToken)
+ console.log(accessToken)
  const userName=accessToken.userDetail.user.userName;
 
  const user = await User.model.findOne({userName}).catch((err)=>{
