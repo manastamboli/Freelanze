@@ -121,7 +121,7 @@ async function loginUserController(req, res) {
     const options = {
         httpOnly: true,
         secure:true,
-        sameSite:'lax',
+        sameSite:'none',
         
     }
      
@@ -136,7 +136,12 @@ async function loginUserController(req, res) {
 async function addUserSkillController(req,res) {
     console.log(req.cookies.accesstoken);
     const midUser = req.user;
+    
+
     const myCookie = req.cookies['accesstoken'];
+    const myCookie2 = req.cookies['accessToken'];
+    
+    console.log("its a cookie",myCookie2)
     console.log("its a cookie",myCookie)
     console.log("it is current user",midUser)
 
