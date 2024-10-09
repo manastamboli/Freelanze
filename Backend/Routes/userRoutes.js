@@ -11,7 +11,7 @@ const upload=uploadFile();
 // user Routes
 router.post('/api/addUser',userController.addUserController);
 router.post('/api/loginUser',userController.loginUserController);
-router.post('/api/getSkills',authenticateToken,userController.addUserSkillController)
+router.post('/api/getSkills',userController.addUserSkillController)
 router.post('/api/getExperience',userController.addUserExperienceController)
 router.get('/api/getUser',authenticateToken,userController.getCurrentUser)
 router.get('/api/midCheck',authenticateToken,userController.middlewareCheck)

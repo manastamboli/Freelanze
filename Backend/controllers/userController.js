@@ -138,6 +138,9 @@ async function addUserSkillController(req,res) {
     const accessUser = req.user;
     console.log("requested from middleware",accessUser)
     const access= req.cookies['accessToken'];
+    const cookie = req.cookies['accesstoken'];
+    console.log("its is cookie",cookie);
+    
      const skills=req.body
      console.log("token from skills page",access)
     const accessToken= await userModel.addUserSkills(access).catch((err)=>{
