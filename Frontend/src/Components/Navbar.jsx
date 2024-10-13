@@ -18,13 +18,11 @@ function Navbar() {
       console.log("console check")
         console.log(Cookies.get('accessToken'))
         const response1= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
-        setUserName(response1.userName)
+        setUserName()
         setresponse(response1);
 
         
-        console.log(response.data.user.userName);
-        console.log("response from backend",response1)
-        console.log(response1.userName);
+     
     }
      getUser();
   },[])
@@ -106,8 +104,9 @@ function Navbar() {
               
               <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
              Login
-             {console.log(response.data)}
-             {console.log(response.data.userName)}
+             {console.log(response)}
+             
+           
 
              
             
