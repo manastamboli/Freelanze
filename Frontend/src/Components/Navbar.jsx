@@ -14,9 +14,10 @@ function Navbar() {
   useEffect(()=>{
     async function getUser() {
       console.log("here its is comming from")
+      console.log("console check")
         console.log(Cookies.get('accessToken'))
         const response= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
-        setUserName(response.data.user.userName)
+        //setUserName(response.data.user.userName)
         console.log(response.data.user.userName);
         console.log("response from backend",response)
         console.log(response.userName);
