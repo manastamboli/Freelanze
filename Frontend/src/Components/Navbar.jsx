@@ -18,7 +18,7 @@ function Navbar() {
         const response= await axios.get('https://freelanze-backend.onrender.com/api/getUser').catch((err)=>{ return {error:err}})
         setUserName(response.data.user.userName)
         console.log(response.data.user.userName);
-        console.log(response)
+        console.log("response from backend",response)
         console.log(response.userName);
     }
      getUser();
