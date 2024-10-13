@@ -9,6 +9,7 @@ function Navbar() {
   const [guestUser, setGuestUser] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [userName, setUserName] = useState(''); // State to hold the user's name
+  const[response,setresponse]=useState({});
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -16,11 +17,14 @@ function Navbar() {
       console.log("here its is comming from")
       console.log("console check")
         console.log(Cookies.get('accessToken'))
-        const response= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
-        setUserName(response.userName)
+        const response1= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
+        setUserName(response1.userName)
+        setresponse(response1);
+
+        
         console.log(response.data.user.userName);
-        console.log("response from backend",response)
-        console.log(response.userName);
+        console.log("response from backend",response1)
+        console.log(response1.userName);
     }
      getUser();
   },[])
@@ -102,6 +106,7 @@ function Navbar() {
               
               <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
              Login
+             {console.log(response)}
              </a>
             )}
           </div>
