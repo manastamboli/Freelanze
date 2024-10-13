@@ -12,7 +12,10 @@ async function authenticateToken(req, res, next) {
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, user) => {
         if (err) return res.sendStatus(403);
 
+      
         req.user =await User.model.findOne({userName:user.userName})
+      
+       
         console.log(req.user,"BRO this one");
         
         next();

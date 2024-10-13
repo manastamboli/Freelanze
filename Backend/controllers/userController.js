@@ -234,8 +234,11 @@ async function addUserExperienceController(req, res) {
 
 const getCurrentUser = (req, res) => {
     // Avoid sending the entire request or response object
-    const user = req.user; // Extract only necessary data
-    res.json({ user }); // Send only relevant data
+    const user =req.user; // Extract only necessary data
+    console.log(user,"got from middleware")
+    res.json({ user });
+
+     // Send only relevant data
   };
   
  async function middlewareCheck(req,res) {
