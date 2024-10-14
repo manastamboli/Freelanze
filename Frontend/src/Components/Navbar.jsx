@@ -18,7 +18,7 @@ function Navbar() {
       console.log("console check")
         console.log(Cookies.get('accessToken'))
         const response1= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
-        setUserName()
+        setUserName(response1)
         setresponse(response1);
 
         
@@ -99,12 +99,13 @@ function Navbar() {
             {guestUser ? (
               <a href="#" className="block lg:inline hover:underline">
                {` Hello ${userName}`}
+               {console.log(response)}
             </a>
             ) : (
               
               <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
              Login
-              { console.log(response.data.userExperience[0].userName)}
+              { console.log(response)}
 
              {console.log(response)}
              

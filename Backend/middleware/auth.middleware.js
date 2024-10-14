@@ -13,8 +13,8 @@ async function authenticateToken(req, res, next) {
         if (err) return res.sendStatus(403);
 
       
-        req.user =await User.model.findOne({userName:user.userName})
-      
+        const data =await User.model.findOne({userName:user.userName})
+        req.user=data.userName
        
         console.log(req.user,"BRO this one");
         
