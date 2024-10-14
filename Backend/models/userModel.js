@@ -147,7 +147,7 @@ async function loginUser(param) {
         }
         return { error, status: 400 }
     }
-    const loginData = await User.model.findOne({ userName: param.userName}).catch((err) => {
+    const loginData = await User.model.findOne({ $or: [{ userName:param.userName }, {userEmail:param.userEmail }] }).catch((err) => {
         return ({ error: err })
     })
     if (!loginData || (loginData && loginData.error)) {
