@@ -9,7 +9,7 @@ function Navbar() {
   const [guestUser, setGuestUser] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [userName, setUserName] = useState(''); // State to hold the user's name
-  const[response,setresponse]=useState({});
+  
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -17,9 +17,9 @@ function Navbar() {
       console.log("here its is comming from")
       console.log("console check")
         console.log(Cookies.get('accessToken'))
-        const response1= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
-        setUserName(response1)
-        setresponse(response1);
+        const response= await axios.get('https://freelanze-backend.onrender.com/api/getUser')
+        setUserName(response.data)
+       
 
         
      
@@ -96,7 +96,7 @@ function Navbar() {
               Market place
             </a>
             
-            {guestUser ? (
+            {userName ? (
               <a href="#" className="block lg:inline hover:underline">
                {` Hello ${userName}`}
                {console.log(response)}
