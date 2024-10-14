@@ -56,7 +56,7 @@ const Marketplace = () => {
               <div
                 className="w-full h-40 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(../public/images/${card.imageUrl})`,
+                  backgroundImage: `${card.imageUrl})`,
                 }}></div>
               <div className="p-4 flex flex-col justify-between flex-grow">
                 <h4 className="text-lg font-bold mb-2">{card.title}</h4>
