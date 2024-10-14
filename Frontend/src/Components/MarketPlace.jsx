@@ -23,12 +23,16 @@ const Marketplace = () => {
   const displayCards = () => {
     console.log("this is from cloudinary",projects.thumnail)
     return projects.map((project, index) => ({
+
       id: index,
       title: project.title,
       description: project.description,
       price: `$${project.amount}`,
       imageUrl: project.thumnail,
       skills: Array.isArray(project.skillsRequired) ? project.skillsRequired : [project.skillsRequired],
+
+   
+    
     }));
   };
 
@@ -56,8 +60,13 @@ const Marketplace = () => {
               <div
                 className="w-full h-40 bg-cover bg-center"
                 style={{
-                  backgroundImage: `${card.imageUrl})`,
-                }}></div>
+                  backgroundImage: card.imageUrl,
+                  
+                }}
+
+                >
+                  {console.log("this is image url",card.imageUrl)}
+                </div>
               <div className="p-4 flex flex-col justify-between flex-grow">
                 <h4 className="text-lg font-bold mb-2">{card.title}</h4>
                 <div className="flex flex-wrap gap-2 mb-2">
