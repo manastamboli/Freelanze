@@ -60,7 +60,7 @@ const Marketplace = () => {
               <div
                 className="w-full h-40 bg-cover bg-center"
                 style={{
-                  backgroundImage: card.imageUrl,
+                  backgroundImage:`url(${card.imageUrl})`,
                   
                 }}
 
