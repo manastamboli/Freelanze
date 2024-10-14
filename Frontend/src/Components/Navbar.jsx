@@ -105,7 +105,7 @@ function Navbar() {
               
               <a href="#" onClick={handleLoginRoute} className="block lg:inline hover:underline">
              Login
-              { console.log(response)}
+              { console.log(response.data)}
 
              {console.log(response)}
              
