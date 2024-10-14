@@ -21,7 +21,7 @@ const Marketplace = () => {
 
   // Placeholder function to return the formatted project data
   const displayCards = () => {
-    console.log(projects.thumnail)
+    console.log("this is from cloudinary",projects.thumnail)
     return projects.map((project, index) => ({
       id: index,
       title: project.title,
